@@ -1,52 +1,61 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import { FaTrash, FaCheckCircle, FaPlus } from "react-icons/fa";
+import "./App.css";
 
-function App() {
-  const [task, setTask] = useState('');
+export default function App() {
+  const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
 
   const addTask = () => {
-    if (task !== '') {
+    if (task.trim() !== "") {
       setTasks([...tasks, { id: Date.now(), text: task, completed: false }]);
-      setTask('');
+      setTask("");
     }
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter(task => task.id !== id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   const toggleTaskCompletion = (id) => {
-    setTasks(tasks.map(task =>
-      task.id === id ? { ...task, completed: !task.completed } : task
-    ));
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
   };
 
   return (
     <div className="App">
-      <h1>Tasks List</h1>
+      <h1>Task Manager</h1>
       <div className="input-container">
         <input
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}
-          placeholder="Task"
+          placeholder="Add a new task..."
         />
-        <button onClick={addTask}>Add</button>
+        <button onClick={addTask}>
+          <FaPlus />
+        </button>
       </div>
-
       <ul className="task-list">
         {tasks.map((task) => (
-          <li key={task.id} className={task.completed ? 'completed' : ''}>
+          <li key={task.id} className={task.completed ? "completed" : ""}>
             <span onClick={() => toggleTaskCompletion(task.id)}>
               {task.text}
             </span>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
+            <div>
+              <button onClick={() => toggleTaskCompletion(task.id)}>
+                <FaCheckCircle />
+              </button>
+              <button onClick={() => deleteTask(task.id)}>
+                <FaTrash />
+              </button>
+            </div>
           </li>
         ))}
       </ul>
     </div>
   );
 }
-
-export default App;
