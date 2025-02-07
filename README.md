@@ -19,7 +19,7 @@ This is a simple To-Do List application built with **React**, allowing users to 
 
 To run this project locally, you'll need to have **Node.js** and **npm** (or **yarn**) installed on your machine. If you haven't installed them yet, download and install Node.js from [here](https://nodejs.org/).
 
-### Run the Project?
+### Start the Project
 
 1. Clone this repository:
    
