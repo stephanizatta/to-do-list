@@ -31,11 +31,10 @@ h1 {
 .input-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
   background-color: #f9f9f9;
   padding: 10px;
   border-radius: 30px;
+  gap: 10px;
 }
 
 .input-container input {
@@ -47,7 +46,8 @@ h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.input-container button {
+.input-container button,
+.task-list button {
   background-color: #4caf50;
   border: none;
   padding: 10px;
@@ -55,15 +55,16 @@ h1 {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
 
-.input-container button:hover {
+.input-container button:hover,
+.task-list button:hover {
   background-color: #45a049;
 }
 
 .task-list {
-  list-style-type: none;
+  list-style: none;
 }
 
 .task-list li {
@@ -93,19 +94,7 @@ h1 {
   flex-grow: 1;
 }
 
-.task-list li div {
+.task-list div {
   display: flex;
   gap: 10px;
-}
-
-.task-list button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: #4caf50;
-  font-size: 1.5rem;
-}
-
-.task-list button:hover {
-  color: #45a049;
 }
