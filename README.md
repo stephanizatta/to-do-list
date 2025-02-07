@@ -24,12 +24,12 @@ To run this project locally, you'll need to have **Node.js** and **npm** (or **y
 1. Clone this repository:
    
    ```bash
-   git clone https://github.com/your-username/memorygame.git
+   git clone https://github.com/your-username/to-do-list.git
 
 2. Navigate to the project directory:
     
    ```bash
-   cd memorygame
+   cd to-do-list
 
 3. Install the project dependencies:
     
